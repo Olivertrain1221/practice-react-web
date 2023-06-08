@@ -9,33 +9,31 @@ function BrandGuide() {
     {
       id: 'e1',
       title: 'Events',
-      data: "",
+      img: "",
     }, {
       id: 'e2',
       title: 'Estate',
-      data: "",
+      img: "",
     },
     {
       id: 'e3',
       title: 'Entertaining and Hospitality',
-      data: "",
+      img: "",
     },
   ]
   
   const estate = [
     {
       id: 'e1',
-      title: 'HOUSE',
-      data: "",
+      title: 'Core',
+      img: "https://static.goodwood.com/globalassets/email/talent/goodwood-estate-logo-2x.png",
+      pdfALink: "https://static.goodwood.com/globalassets/brand/guidelines/brand-guidelines-goodwood-core-brand.pdf",
     }, {
       id: 'e2',
-      title: 'MOTORCIRCUIT',
-      data: "",
-    },
-    {
-      id: 'e3',
-      title: 'HOTEL',
-      data: "",
+      title: 'The Kennels',
+      img: "https://ticketing.goodwood.com/Assets/HTML/Images/logos/the-kennels-logo.svg",
+      pdfALink: "https://static.goodwood.com/globalassets/brand/guidelines/brand-guidelines-goodwood-the-kennels.pdf",
+
     },
   ]
   const hopitality = [
@@ -43,27 +41,44 @@ function BrandGuide() {
       id: 'e1',
       title: 'FOOD',
       data: "",
+      pdfALink: "",
     }, {
       id: 'e2',
       title: 'DRINK',
       data: "",
+      pdfALink: "",
     },
   
   ]
   const events = [
     {
       id: 'e1',
-      title: 'REV',
-      data: "",
+      title: 'Festival Of Speed',
+      data: "https://static.goodwood.com/globalassets/motorsport/fos/logo/festival-of-speed-logo.svg?width=80&quality=80",
+      pdfALink: "",
     }, {
       id: 'e2',
-      title: 'FOS',
-      data: "",
+      title: 'Members Meeting',
+      data: "https://ticketing.goodwood.com/Assets/HTML/Images/logos/grrc-color-logo.svg?width=80&quality=80",
+      pdfALink: "",
     },
     {
       id: 'e3',
-      title: 'HROSE',
-      data: "",
+      title: 'Goodwood Revival',
+      data: "https://static.goodwood.com/globalassets/revival-logo.png?quality=80",
+      pdfALink: "",
+    },
+    {
+      id: 'e3',
+      title: 'Qatar Goodwood',
+      data: "https://www.goodwood.com/globalassets/press/horseracing/qgf-logo---red-outline.png?quality=80",
+      pdfALink: "",
+    },
+    {
+      id: 'e3',
+      title: 'Goodwoof',
+      data: "https://static.goodwood.com/globalassets/goodwoof/goodwoof-mars-petcare-logo.png?quality=80",
+      pdfALink: "",
     },
   ]
 
@@ -75,11 +90,11 @@ function BrandGuide() {
     console.log("working")
     console.log(tabId)
     setTabState(tabId)
-    if (tabId == "e1") {
+    if (tabId === "e1") {
       setData(events)
-    } else if (tabId == "e2") {
+    } else if (tabId === "e2") {
       setData(estate)
-    } else if (tabId == "e3") {
+    } else if (tabId === "e3") {
       setData(hopitality)
     }
 
