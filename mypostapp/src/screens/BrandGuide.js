@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Contact from './includes/Contact'
 import Grid from '../components/Grid/Grid'
 import Footer from './includes/Footer'
 import Tabs from '../components/AllTabs/tabs';
 function BrandGuide() {
-  
+
   const tabs = [
     {
       id: 'e1',
       title: 'Events',
       data: "",
-    },{
+    }, {
       id: 'e2',
       title: 'Estate',
       data: "",
@@ -21,22 +21,86 @@ function BrandGuide() {
       data: "",
     },
   ]
+  
+  const estate = [
+    {
+      id: 'e1',
+      title: 'HOUSE',
+      data: "",
+    }, {
+      id: 'e2',
+      title: 'MOTORCIRCUIT',
+      data: "",
+    },
+    {
+      id: 'e3',
+      title: 'HOTEL',
+      data: "",
+    },
+  ]
+  const hopitality = [
+    {
+      id: 'e1',
+      title: 'FOOD',
+      data: "",
+    }, {
+      id: 'e2',
+      title: 'DRINK',
+      data: "",
+    },
+  
+  ]
+  const events = [
+    {
+      id: 'e1',
+      title: 'REV',
+      data: "",
+    }, {
+      id: 'e2',
+      title: 'FOS',
+      data: "",
+    },
+    {
+      id: 'e3',
+      title: 'HROSE',
+      data: "",
+    },
+  ]
+
+  const [tabState, setTabState] = useState('');
+  const [data, setData] = useState(events);
+
+  const onTabClick = (e) => {
+    const tabId = e.target.id
+    console.log("working")
+    console.log(tabId)
+    setTabState(tabId)
+    if (tabId == "e1") {
+      setData(events)
+    } else if (tabId == "e2") {
+      setData(estate)
+    } else if (tabId == "e3") {
+      setData(hopitality)
+    }
+
+  }
+
   return (
     <>
-    <section class="w-full flex bg-[#131313]  flex-col sm:pt-16 px-5 justify-center">
+      <section class="w-full flex bg-[#131313]  flex-col sm:pt-16 px-5 justify-center">
         <div class="top-2 md:top-[2rem] mx-auto pt-8 left-1/2 bg-[#131313] sm:max-w-[90rem] sm:px-20">
-            <h1 class="text-white text-4xl uppercase sm:text-6xl font-normal tracking-widest">Brand guidelines</h1>
-            <p class="mt-6 sm:mb-16 text-lg text-[#ffffffb3] sm:text-2xl eb-garamond ">Maintaining brand consistency and
-                integrity in everything we do to ensure our brand's identity and message are communicated effectively
-                and consistently to all our customers</p>
-            <div class="flex flex-row items-center mt-3 h-16 gap-9 outertabContainer">
-              <Tabs items={tabs}/>
-            </div>
+          <h1 class="text-white text-4xl uppercase sm:text-6xl font-normal tracking-widest">Brand guidelines</h1>
+          <p class="mt-6 sm:mb-16 text-lg text-[#ffffffb3] sm:text-2xl eb-garamond ">Maintaining brand consistency and
+            integrity in everything we do to ensure our brand's identity and message are communicated effectively
+            and consistently to all our customers</p>
+          <div class="flex flex-row items-center mt-3 h-16 gap-9 outertabContainer">
+            <Tabs onTabClick={onTabClick} items={tabs} />
+          </div>
         </div>
-    </section>
-    <Grid />
-    <Contact />
-     <Footer />
+      </section>
+      <Grid dataSource={data} />
+      <Contact />
+      <Footer />
     </>
   )
 }
